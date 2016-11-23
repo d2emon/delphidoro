@@ -20,6 +20,7 @@ type
     lbAuto: TLabel;
     lbWork: TLabel;
     lbRound: TLabel;
+    Label1: TLabel;
     procedure tmTimerTimer(Sender: TObject);
     procedure bbWorkClick(Sender: TObject);
     procedure bbRestClick(Sender: TObject);
@@ -61,7 +62,7 @@ begin
   if Pomodoro > 0 then
   begin
     ggProgress.AddProgress(1);
-    Estimate.Time := (Pomodoro - ggProgress.Progress) * 1000;
+    Estimate.Time := ((Pomodoro * 60) - ggProgress.Progress) * 1000;
   end
   else
   begin
@@ -123,7 +124,7 @@ end;
 procedure TfmMain.ResetProgress;
 begin
   ggProgress.Progress := 0;
-  ggProgress.MaxValue := Pomodoro;
+  ggProgress.MaxValue := Pomodoro * 60;
 end;
 
 procedure TfmMain.bbRestClick(Sender: TObject);

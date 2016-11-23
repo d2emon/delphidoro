@@ -1,9 +1,10 @@
 object fmMain: TfmMain
   Left = 192
   Top = 124
-  Width = 215
-  Height = 204
+  BorderStyle = bsToolWindow
   Caption = 'fmMain'
+  ClientHeight = 173
+  ClientWidth = 351
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,14 +12,20 @@ object fmMain: TfmMain
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   OnCreate = bbAutoClick
+  OnShow = tmTimerTimer
+  DesignSize = (
+    351
+    173)
   PixelsPerInch = 96
   TextHeight = 13
   object ggProgress: TGauge
-    Left = 8
-    Top = 56
-    Width = 100
-    Height = 100
+    Left = 101
+    Top = 8
+    Width = 160
+    Height = 160
+    Anchors = [akLeft, akTop, akRight, akBottom]
     Kind = gkPie
     MaxValue = 25
     Progress = 0
@@ -26,44 +33,52 @@ object fmMain: TfmMain
   object lbTime: TLabel
     Left = 8
     Top = 8
-    Width = 31
+    Width = 42
     Height = 13
-    Caption = 'lbTime'
+    Caption = '00:00:00'
   end
   object lbEstimate: TLabel
     Left = 8
-    Top = 24
-    Width = 48
+    Top = 40
+    Width = 42
     Height = 13
-    Caption = 'lbEstimate'
+    Caption = '00:00:00'
   end
   object lbAuto: TLabel
-    Left = 64
-    Top = 8
+    Left = 8
+    Top = 72
     Width = 24
     Height = 13
     Caption = #1040#1074#1090#1086
     Visible = False
   end
   object lbWork: TLabel
-    Left = 64
+    Left = 8
     Top = 24
-    Width = 34
+    Width = 36
     Height = 13
-    Caption = 'lbWork'
+    Caption = #1056#1072#1073#1086#1090#1072
   end
   object lbRound: TLabel
-    Left = 64
-    Top = 40
+    Left = 88
+    Top = 56
     Width = 6
     Height = 13
     Caption = '0'
   end
+  object Label1: TLabel
+    Left = 8
+    Top = 56
+    Width = 58
+    Height = 13
+    Caption = #1055#1086#1084#1080#1076#1086#1088#1086#1074
+  end
   object bbWork: TBitBtn
-    Left = 112
+    Left = 268
     Top = 8
     Width = 75
     Height = 25
+    Anchors = [akTop, akRight]
     Caption = 'Work'
     TabOrder = 0
     OnClick = bbWorkClick
@@ -83,10 +98,11 @@ object fmMain: TfmMain
     NumGlyphs = 2
   end
   object bbRest: TBitBtn
-    Left = 112
+    Left = 268
     Top = 40
     Width = 75
     Height = 25
+    Anchors = [akTop, akRight]
     Caption = 'Rest'
     TabOrder = 1
     OnClick = bbRestClick
@@ -106,10 +122,11 @@ object fmMain: TfmMain
     NumGlyphs = 2
   end
   object bbLongRest: TBitBtn
-    Left = 112
+    Left = 268
     Top = 72
     Width = 75
     Height = 25
+    Anchors = [akTop, akRight]
     Caption = 'Long'
     TabOrder = 2
     OnClick = bbLongRestClick
@@ -129,10 +146,11 @@ object fmMain: TfmMain
     NumGlyphs = 2
   end
   object bbStop: TBitBtn
-    Left = 112
+    Left = 268
     Top = 104
     Width = 75
     Height = 25
+    Anchors = [akTop, akRight]
     Caption = 'Stop'
     TabOrder = 3
     OnClick = bbStopClick
@@ -152,10 +170,11 @@ object fmMain: TfmMain
     NumGlyphs = 2
   end
   object bbAuto: TBitBtn
-    Left = 112
+    Left = 268
     Top = 136
     Width = 75
     Height = 25
+    Anchors = [akTop, akRight]
     Caption = 'Auto'
     TabOrder = 4
     OnClick = bbAutoClick

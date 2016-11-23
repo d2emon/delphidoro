@@ -8,6 +8,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.Title := 'Помидор';
   Application.CreateForm(TfmMain, fmMain);
   Application.Run;
 end.
